@@ -6,20 +6,16 @@ import profileImg from './assets/profile.jpg';
 import TravelXpert from './assets/travel.png';
 
 function Home() {
-        const [menuOpen, setMenuOpen] = React.useState(false);
-  const [isMobile, setIsMobile] = React.useState(window.innerWidth <= 768);
+      const [isMobile, setIsMobile] = React.useState(window.innerWidth <= 768);
 
-  React.useEffect(() => {
-    const handleResize = () => {
-      const mobile = window.innerWidth <= 768;
-      setIsMobile(mobile);
-      setMenuOpen(!mobile); // open by default on desktop, closed on mobile
-    };
+React.useEffect(() => {
+  const handleResize = () => {
+    setIsMobile(window.innerWidth <= 768);
+  };
 
-    handleResize(); // initial run
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
+  window.addEventListener('resize', handleResize);
+  return () => window.removeEventListener('resize', handleResize);
+}, []);
 
 
   const [columns, setColumns] = React.useState(window.innerWidth <= 768 ? 1 : 2);
@@ -58,52 +54,55 @@ React.useEffect(() => {
   borderBottom: '1px solid rgba(255, 255, 255, 0.1)',
 };
 
-   const topBarStyle = {
-    display: 'flex',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    width: '100%',
-  };
+const topBarStyle = {
+  display: 'flex',
+  justifyContent: 'space-between',
+  alignItems: 'center',
+  width: '100%',
+};
 
-  const logoStyle = {
-    fontSize: '24px',
-    fontWeight: 'bold',
-  };
+const logoStyle = {
+  fontSize: '24px',
+  fontWeight: 'bold',
+  display: isMobile ? 'none' : 'block', // hide logo on mobile
+};
 
-  const burgerStyle = {
-    display: isMobile ? 'block' : 'none',
-    fontSize: '24px',
-    cursor: 'pointer',
-    color: '#fff',
-  };
+const navContainerStyle = {
+  display: 'flex',
+  justifyContent: 'flex-end',
+  width: '100%',
+  backgroundColor: 'transparent',
+  marginTop: '10px',
+  paddingRight: '0px',        // Make sure nothing pushes content inward
+};
 
-  const navContainerStyle = {
-    backgroundColor: 'transparent',
-    marginTop: isMobile ? '10px' : '0px',
-  };
+const navStyle = {
+  display: 'flex',
+  flexDirection: 'row',
+  justifyContent: 'flex-end',
+  alignItems: 'center',
+  gap: isMobile ? '2px' : '20px',
+  listStyle: 'none',
+  padding: 0,
+  margin: 0,
+  width: '100%',              // Ensure full width
+  boxSizing: 'border-box',    // Prevent unexpected overflow/spacing
+};
+const navLinkStyle = {
+  color: '#f0f0f0', // softer white
+  textDecoration: 'none',
+  fontWeight: '500',
+  fontSize: isMobile ? '13px' : '17px',
+  padding: '6px 10px', // clickable area
+  borderRadius: '6px',
+  transition: 'all 0.3s ease-in-out',
+};
 
-  const navStyle = {
-    display: menuOpen ? 'flex' : 'none',
-    flexDirection: isMobile ? 'column' : 'row',
-    gap: '20px',
-    listStyle: 'none',
-    padding: 0,
-    margin: 0,
-  };
-
-  const navLinkStyle = {
-    color: '#ffffff',
-    textDecoration: 'none',
-    fontWeight: '600',
-    fontSize: '17px',
-    transition: 'all 0.3s ease',
-  };
-
-  const navLinkHover = {
-    textDecoration: 'underline',
-    color: '#00e5ff',
-  };
-
+const navLinkHover = {
+  textDecoration: 'none',
+  color: '#00e5ff',
+  // backgroundColor: 'rgba(255, 255, 255, 0.1)', // subtle background on hover
+};
   const mainStyle = {
     display: 'flex',
     flexWrap: 'wrap',
@@ -263,31 +262,27 @@ const skillListItemStyle1 = {
   return (
     <div style={containerStyle}>
       <header style={headerStyle}>
-      <div style={topBarStyle}>
-        <div style={logoStyle}>Saikumar Reddy</div>
-        <div style={burgerStyle} onClick={() => setMenuOpen((prev) => !prev)}>
-          ☰
-        </div>
-      </div>
+    <div style={topBarStyle}>
+      <div style={logoStyle}>Saikumar Reddy</div>
+    </div>
 
-      <nav style={navContainerStyle}>
-        <ul style={navStyle}>
-          {['Home', 'Skills', 'Projects', 'Contact'].map((text, index) => (
-            <li key={index}>
-              <a
-                href={text === 'Home' ? '#' : `#${text.toLowerCase()}`}
-                style={navLinkStyle}
-                onMouseOver={(e) => Object.assign(e.target.style, navLinkHover)}
-                onMouseOut={(e) => Object.assign(e.target.style, navLinkStyle)}
-              >
-                {text}
-              </a>
-            </li>
-          ))}
-        </ul>
-      </nav>
-    </header>
-
+    <nav style={navContainerStyle}>
+      <ul style={navStyle}>
+        {['Home', 'Skills', 'Projects', 'Contact'].map((text, index) => (
+          <li key={index}>
+            <a
+              href={text === 'Home' ? '#' : `#${text.toLowerCase()}`}
+              style={navLinkStyle}
+              onMouseOver={(e) => Object.assign(e.target.style, navLinkHover)}
+              onMouseOut={(e) => Object.assign(e.target.style, navLinkStyle)}
+            >
+              {text}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </nav>
+  </header>
 
       <main style={mainStyle}>
   <img
