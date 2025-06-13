@@ -258,7 +258,47 @@ const skillListItemStyle1 = {
   fontSize: '16px',
   color: '#f0f0f0', // adjust for visibility on dark background
 };
+const containerStyle3 = {
+  width: '100%',
+  maxWidth: isMobile ? '90%' : '600px',
+  margin: '0 auto', // removes top margin
+  paddingTop: isMobile ? '10px' : '20px', // small top padding
+  paddingBottom: isMobile ? '10px' : '30px',
+  paddingLeft: isMobile ? '10px' : '30px',
+  paddingRight: isMobile ? '10px' : '30px',
+  backgroundColor: isMobile ? 'transparent' : '#1c1c1e',
+  borderRadius: isMobile ? '0px' : '12px',
+  boxShadow: isMobile ? 'none' : '0 0 10px rgba(0,0,0,0.3)',
+};
 
+  const labelStyle = {
+    display: 'block',
+    marginBottom: '8px',
+    fontSize: isMobile ? '14px' : '16px',
+    color: '#fff',
+  };
+
+  const inputStyle = {
+    width: '100%',
+    padding: '12px',
+    borderRadius: '8px',
+    border: '1px solid #ccc',
+    backgroundColor: 'rgba(255,255,255,0.1)',
+    color: '#fff',
+    fontSize: '16px',
+  };
+
+  const buttonStyle3 = {
+    padding: '12px 24px',
+    backgroundColor: '#007bff',
+    color: '#fff',
+    border: 'none',
+    borderRadius: '8px',
+    fontSize: '16px',
+    cursor: 'pointer',
+    transition: 'background-color 0.3s ease',
+    width: '100%',
+  };
   return (
     <div style={containerStyle}>
       <header style={headerStyle}>
@@ -609,86 +649,49 @@ const skillListItemStyle1 = {
     color: '#fff',
   }}
 >
-  <form>
-    <div style={{ marginBottom: '20px' }}>
-      <label htmlFor="name" style={{ display: 'block', marginBottom: '8px' }}>
-        Name
-      </label>
-      <input
-        type="text"
-        id="name"
-        name="name"
-        placeholder="e.g. Rohit "
-        style={{
-          width: '100%',
-          padding: '12px',
-          borderRadius: '8px',
-          border: '1px solid #ccc',
-          backgroundColor: 'rgba(255,255,255,0.1)',
-          color: '#fff',
-        }}
-      />
-    </div>
+  <form style={containerStyle}>
+      <div style={{ marginBottom: '20px' }}>
+        <label htmlFor="name" style={labelStyle}>Name</label>
+        <input
+          type="text"
+          id="name"
+          name="name"
+          placeholder="e.g. Rohit"
+          style={inputStyle}
+        />
+      </div>
 
-    <div style={{ marginBottom: '20px' }}>
-      <label htmlFor="email" style={{ display: 'block', marginBottom: '8px' }}>
-        Email
-      </label>
-      <input
-        type="email"
-        id="email"
-        name="email"
-        placeholder="e.g. name@example.com"
-        style={{
-          width: '100%',
-          padding: '12px',
-          borderRadius: '8px',
-          border: '1px solid #ccc',
-          backgroundColor: 'rgba(255,255,255,0.1)',
-          color: '#fff',
-        }}
-      />
-    </div>
+      <div style={{ marginBottom: '20px' }}>
+        <label htmlFor="email" style={labelStyle}>Email</label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          placeholder="e.g. name@example.com"
+          style={inputStyle}
+        />
+      </div>
 
-    <div style={{ marginBottom: '20px' }}>
-      <label htmlFor="message" style={{ display: 'block', marginBottom: '8px' }}>
-        Message
-      </label>
-      <textarea
-        id="message"
-        name="message"
-        rows="5"
-        placeholder="Write your message here..."
-        style={{
-          width: '100%',
-          padding: '12px',
-          borderRadius: '8px',
-          border: '1px solid #ccc',
-          backgroundColor: 'rgba(255,255,255,0.1)',
-          color: '#fff',
-          resize: 'vertical',
-        }}
-      ></textarea>
-    </div>
+      <div style={{ marginBottom: '20px' }}>
+        <label htmlFor="message" style={labelStyle}>Message</label>
+        <textarea
+          id="message"
+          name="message"
+          rows="5"
+          placeholder="Write your message here..."
+          style={{ ...inputStyle, resize: 'vertical' }}
+        ></textarea>
+      </div>
 
-    <button
-      type="submit"
-      style={{
-        padding: '12px 24px',
-        backgroundColor: '#007bff',
-        color: '#fff',
-        border: 'none',
-        borderRadius: '8px',
-        fontSize: '16px',
-        cursor: 'pointer',
-        transition: 'background-color 0.3s ease',
-      }}
-      onMouseOver={(e) => (e.currentTarget.style.backgroundColor = '#0056b3')}
-      onMouseOut={(e) => (e.currentTarget.style.backgroundColor = '#007bff')}
-    >
-      Submit
-    </button>
-  </form>
+      <button
+        type="submit"
+        style={buttonStyle}
+        onMouseOver={(e) => (e.currentTarget.style.backgroundColor = '#0056b3')}
+        onMouseOut={(e) => (e.currentTarget.style.backgroundColor = '#007bff')}
+      >
+        Submit
+      </button>
+    </form>
 </section>
 
     </div>
