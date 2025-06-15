@@ -269,6 +269,7 @@ const containerStyle3 = {
   backgroundColor: isMobile ? 'transparent' : '#1c1c1e',
   borderRadius: isMobile ? '0px' : '12px',
   boxShadow: isMobile ? 'none' : '0 0 10px rgba(0,0,0,0.3)',
+  //changing something
 };
 
   const labelStyle = {
