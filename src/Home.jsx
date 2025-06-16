@@ -56,16 +56,27 @@ React.useEffect(() => {
 
 const topBarStyle = {
   display: 'flex',
-  justifyContent: 'space-between',
+  justifyContent: 'flex-start', // aligned to the left
   alignItems: 'center',
   width: '100%',
+  padding: '20px',
+  // backgroundColor: 'rgba(0, 0, 0, 0.7)', // optional: adds slight background
+  boxShadow: '0 2px 8px rgba(0, 0, 0, 0.1)',
+  position: 'sticky',
+  top: 0,
+  zIndex: 1000,
 };
 
 const logoStyle = {
-  fontSize: '24px',
-  fontWeight: 'bold',
-  display: isMobile ? 'none' : 'block', // hide logo on mobile
+  fontSize: '28px',
+  fontWeight: 600,
+  color: '#00bcd4', // your preferred color
+  fontFamily: 'Segoe UI, sans-serif',
+  display: isMobile ? 'none' : 'block',
+  opacity: 0, // initial state before animation
 };
+
+
 
 const navContainerStyle = {
   display: 'flex',
@@ -304,7 +315,7 @@ const containerStyle3 = {
     <div style={containerStyle}>
       <header style={headerStyle}>
     <div style={topBarStyle}>
-      <div style={logoStyle}>Saikumar Reddy</div>
+      <div style={logoStyle} className='logo'>Saikumar Reddy</div>
     </div>
 
     <nav style={navContainerStyle}>
@@ -637,63 +648,99 @@ const containerStyle3 = {
       <h2 style={{ fontSize: '36px', textAlign: 'center', marginBottom: '20px', color: '#fff' }}>
   Get in Touch
 </h2>
-    <section
+   <section
   id="contact"
   style={{
-    padding: '40px',
-    borderRadius: '16px',
-    backgroundColor: 'rgba(255, 255, 255, 0.05)',
-    backdropFilter: 'blur(4px)',
-    boxShadow: '0 4px 20px rgba(0, 0, 0, 0.2)',
+    padding: '40px 20px',
     maxWidth: '600px',
     margin: '0 auto 80px auto',
+    fontFamily: 'Segoe UI, sans-serif',
     color: '#fff',
   }}
 >
-  <form style={containerStyle}>
-      <div style={{ marginBottom: '20px' }}>
-        <label htmlFor="name" style={labelStyle}>Name</label>
-        <input
-          type="text"
-          id="name"
-          name="name"
-          placeholder="e.g. Rohit"
-          style={inputStyle}
-        />
-      </div>
+  <form
+    style={{
+      display: 'flex',
+      flexDirection: 'column',
+      gap: '20px',
+    }}
+  >
+    <input
+      type="text"
+      name="name"
+      placeholder="Name"
+      style={{
+        padding: '14px',
+        border: 'none',
+        borderBottom: '2px solid #555',
+        backgroundColor: 'transparent',
+        color: '#fff',
+        fontSize: '16px',
+        transition: 'border-color 0.3s',
+        outline: 'none',
+      }}
+      onFocus={(e) => (e.currentTarget.style.borderBottom = '2px solid #007bff')}
+      onBlur={(e) => (e.currentTarget.style.borderBottom = '2px solid #555')}
+    />
 
-      <div style={{ marginBottom: '20px' }}>
-        <label htmlFor="email" style={labelStyle}>Email</label>
-        <input
-          type="email"
-          id="email"
-          name="email"
-          placeholder="e.g. name@example.com"
-          style={inputStyle}
-        />
-      </div>
+    <input
+      type="email"
+      name="email"
+      placeholder="Email"
+      style={{
+        padding: '14px',
+        border: 'none',
+        borderBottom: '2px solid #555',
+        backgroundColor: 'transparent',
+        color: '#fff',
+        fontSize: '16px',
+        transition: 'border-color 0.3s',
+        outline: 'none',
+      }}
+      onFocus={(e) => (e.currentTarget.style.borderBottom = '2px solid #007bff')}
+      onBlur={(e) => (e.currentTarget.style.borderBottom = '2px solid #555')}
+    />
 
-      <div style={{ marginBottom: '20px' }}>
-        <label htmlFor="message" style={labelStyle}>Message</label>
-        <textarea
-          id="message"
-          name="message"
-          rows="5"
-          placeholder="Write your message here..."
-          style={{ ...inputStyle, resize: 'vertical' }}
-        ></textarea>
-      </div>
+    <textarea
+      name="message"
+      placeholder="Message"
+      rows="5"
+      style={{
+        padding: '14px',
+        border: '1px solid #555',
+        backgroundColor: 'transparent',
+        color: '#fff',
+        fontSize: '16px',
+        borderRadius: '8px',
+        outline: 'none',
+        resize: 'vertical',
+        transition: 'border-color 0.3s',
+      }}
+      onFocus={(e) => (e.currentTarget.style.border = '1px solid #007bff')}
+      onBlur={(e) => (e.currentTarget.style.border = '1px solid #555')}
+    ></textarea>
 
-      <button
-        type="submit"
-        style={buttonStyle}
-        onMouseOver={(e) => (e.currentTarget.style.backgroundColor = '#0056b3')}
-        onMouseOut={(e) => (e.currentTarget.style.backgroundColor = '#007bff')}
-      >
-        Submit
-      </button>
-    </form>
+    <button
+      type="submit"
+      style={{
+        padding: '14px',
+        backgroundColor: '#007bff',
+        color: '#fff',
+        fontSize: '16px',
+        border: 'none',
+        borderRadius: '8px',
+        cursor: 'pointer',
+        transition: 'background-color 0.3s ease',
+      }}
+      onMouseOver={(e) => (e.currentTarget.style.backgroundColor = '#0056b3')}
+      onMouseOut={(e) => (e.currentTarget.style.backgroundColor = '#007bff')}
+    >
+      Submit
+    </button>
+  </form>
 </section>
+
+
 
     </div>
   );
