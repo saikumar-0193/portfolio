@@ -133,6 +133,10 @@ const navLinkHover = {
     boxShadow: '0 12px 30px rgba(0,0,0,0.4)',
     transition: 'transform 0.4s ease',
   };
+  if (window.innerWidth <= 480) {
+  imageStyle.width = '220px';
+  imageStyle.height = '220px';
+}
 
   const textSectionStyle = {
     maxWidth: '600px',
@@ -166,6 +170,31 @@ const navLinkHover = {
     boxShadow: '0 6px 18px rgba(0, 0, 0, 0.3)',
     transition: 'transform 0.3s ease',
   };
+
+  if (window.innerWidth <= 480) {
+  Object.assign(headingStyle, {
+    fontSize: '32px',
+    textAlign: 'center',
+  });
+
+  Object.assign(paragraphStyle, {
+    fontSize: '16px',
+    textAlign: 'center',
+  });
+
+  Object.assign(buttonStyle, {
+    fontSize: '15px',
+    padding: '12px 20px',
+  });
+
+  Object.assign(textSectionStyle, {
+    maxWidth: '100%',
+    textAlign: 'center',
+  });
+}
+
+
+
  const headStyle = {
   textAlign: 'center',
   fontSize: '38px',
@@ -235,6 +264,15 @@ const beginnerTagStyle = {
   fontWeight: 'normal',
   fontStyle: 'italic',
 };
+if (window.innerWidth <= 480) {
+  gridContainerStyle.gridTemplateColumns = '1fr';
+  gridContainerStyle.padding = '0 10px';
+  cardStyle.minHeight = 'auto';
+  cardStyle.padding = '20px';
+  headStyle.fontSize = '28px';
+  skillCategoryTitleStyle.fontSize = '20px';
+  skillListItemStyle.fontSize = '16px';
+}
 
 const sectionStyle = {
   marginTop: '100px',
