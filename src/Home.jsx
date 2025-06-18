@@ -6,6 +6,7 @@ import profileImg from './assets/profile.jpg';
 import TravelXpert from './assets/travel.png';
 
 function Home() {
+  const isMobile1 = window.innerWidth <= 768;
       const [isMobile, setIsMobile] = React.useState(window.innerWidth <= 768);
 
 React.useEffect(() => {
@@ -486,8 +487,16 @@ const containerStyle3 = {
 
     
     <div style={cardStyle1}>
-  <img src={TravelXpert} alt="TravelXpert Preview" style={{ width: '100%', height: '250px', objectFit: 'cover', borderRadius: '10px 10px 0 0' }} />
-  <h3 style={skillCategoryTitleStyle}>TravelXpert</h3>
+<img
+  src={TravelXpert}
+  alt="TravelXpert Preview"
+  style={{
+    width: '100%',
+    height: isMobile1 ? '120px' : '250px', // reduced height for mobile
+    objectFit: 'cover',
+    borderRadius: '10px 10px 0 0',
+  }}
+/>  <h3 style={skillCategoryTitleStyle}>TravelXpert</h3>
   
   <ul style={skillListContainerStyle1}>
     <li style={skillListItemStyle1}>Built a responsive travel website to help tourists explore top destinations, stays, and transport options.</li>
@@ -553,7 +562,17 @@ const containerStyle3 = {
 
     
    <div style={cardStyle1}>
-  <img src={expenseTracker} alt="ExpenseTracker Preview" style={{ width: '100%', height: '250px', objectFit: 'cover', borderRadius: '10px 10px 0 0' }} />
+  <img
+  src={expenseTracker}
+  alt="TravelXpert Preview"
+  style={{
+    width: '100%',
+    height: isMobile1 ? '100px' : '250px',
+     
+    objectFit: 'cover',
+    borderRadius: '10px 10px 0 0',
+  }}
+/> 
   <h3 style={skillCategoryTitleStyle}>ExpenseTracker</h3>
   
   <ul style={skillListContainerStyle1}>
@@ -617,7 +636,16 @@ const containerStyle3 = {
 
    
   <div style={cardStyle1}>
-  <img src={complaintPortal} alt="ComplaintPortal Preview" style={{ width: '100%', height: '230px', objectFit: 'cover', borderRadius: '10px 10px 0 0' }} />
+  <img
+  src={complaintPortal}
+  alt="TravelXpert Preview"
+  style={{
+    width: '100%',
+    height: isMobile1 ? '120px' : '250px', // reduced height for mobile
+    objectFit: 'cover',
+    borderRadius: '10px 10px 0 0',
+  }}
+/> 
   <h3 style={skillCategoryTitleStyle}>ComplaintPortal</h3>
   
   <ul style={skillListContainerStyle1}>
