@@ -805,6 +805,87 @@ const containerStyle3 = {
     </button>
   </form>
 </section>
+   {/* Footer Section */}
+<footer
+  style={{
+    background: 'linear-gradient(to right, #0f2027, #203a43, #2c5364)',
+    padding: '40px 20px 20px',
+    color: '#f0f0f0',
+    textAlign: 'center',
+    fontFamily: 'Segoe UI, sans-serif',
+    marginTop: '100px',
+    borderTop: '1px solid rgba(255,255,255,0.1)',
+  }}
+>
+  <h2
+    style={{
+      fontSize: '22px',
+      fontWeight: '600',
+      color: '#00e5ff',
+      marginBottom: '12px',
+      letterSpacing: '1px',
+      textTransform: 'uppercase',
+    }}
+  >
+    Let’s Connect
+  </h2>
+
+  <p style={{ fontSize: '16px', color: '#cccccc', marginBottom: '20px' }}>
+    Open to freelance work, collaborations, or just a friendly chat.
+  </p>
+
+  <div style={{ display: 'flex', justifyContent: 'center', gap: '30px', marginBottom: '25px', flexWrap: 'wrap' }}>
+    <a
+      href="mailto:saikumarcse193@gmail.com"
+      style={{
+        color: '#00e5ff',
+        textDecoration: 'none',
+        fontSize: '16px',
+        transition: 'color 0.3s ease',
+      }}
+      onMouseOver={(e) => (e.currentTarget.style.color = '#76ff03')}
+      onMouseOut={(e) => (e.currentTarget.style.color = '#00e5ff')}
+    >
+      saikreddy1919@gmail.com
+    </a>
+    <a
+      href="https://linkedin.com/in/saikumar0193"
+      target="_blank"
+      rel="noopener noreferrer"
+      style={{
+        color: '#00e5ff',
+        textDecoration: 'none',
+        fontSize: '16px',
+        transition: 'color 0.3s ease',
+      }}
+      onMouseOver={(e) => (e.currentTarget.style.color = '#76ff03')}
+      onMouseOut={(e) => (e.currentTarget.style.color = '#00e5ff')}
+    >
+      LinkedIn
+    </a>
+    <a
+      href="https://github.com/saikumar-0193"
+      target="_blank"
+      rel="noopener noreferrer"
+      style={{
+        color: '#00e5ff',
+        textDecoration: 'none',
+        fontSize: '16px',
+        transition: 'color 0.3s ease',
+      }}
+      onMouseOver={(e) => (e.currentTarget.style.color = '#76ff03')}
+      onMouseOut={(e) => (e.currentTarget.style.color = '#00e5ff')}
+    >
+      GitHub
+    </a>
+  </div>
+
+  <hr style={{ border: '0.5px solid rgba(255,255,255,0.1)', margin: '20px 0' }} />
+
+  <p style={{ fontSize: '14px', color: '#888' }}>
+    © {new Date().getFullYear()} <span style={{ color: '#00e5ff' }}>Saikumar Reddy</span>. All rights reserved.
+  </p>
+</footer>
 
 
 
