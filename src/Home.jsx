@@ -421,6 +421,117 @@ const containerStyle3 = {
   </div>
 </main>
 
+<section id="journey" style={{ marginTop: '100px', padding: '20px' }}>
+  <h2 style={{
+    textAlign: 'center',
+    fontSize: '38px',
+    fontWeight: '700',
+    marginBottom: '50px',
+    fontFamily: 'Montserrat, sans-serif',
+    color: '#00e5ff',
+    textTransform: 'uppercase',
+    letterSpacing: '2px',
+  }}>My Journey</h2>
+
+  <div style={{
+    position: 'relative',
+    maxWidth: '1000px',
+    margin: '0 auto',
+    padding: '40px 0',
+  }}>
+    {/* Center vertical line */}
+    <div style={{
+      position: 'absolute',
+      top: 0,
+      bottom: 0,
+      left: '50%',
+      width: '4px',
+      backgroundColor: '#00e5ff',
+      transform: 'translateX(-50%)',
+      zIndex: 1,
+    }}></div>
+
+    {/* Timeline entries */}
+    {[
+      { year: "2025", description: "Contributing to open source & building full-stack MERN apps." },
+      { year: "2024", description: "Built ComplaintPortal, TravelXpert. Internship at Internship Studio." },
+      { year: "2023", description: "Focused on backend: Node.js, MongoDB, Express." },
+      { year: "2022", description: "Created ExpenseTracker. Learned React & JavaScript." },
+      { year: "2021", description: "Completed Intermediate. Learned Java basics." },
+      { year: "School", description: "Top scores in SSC. Participated in science fairs & Olympiads." },
+    ].map((item, index) => {
+      const isLeft = index % 2 === 0;
+      return (
+        <div key={index} style={{
+          position: 'relative',
+          width: '100%',
+          marginBottom: '60px',
+          display: 'flex',
+          justifyContent: isLeft ? 'flex-start' : 'flex-end',
+          alignItems: 'center',
+        }}>
+          {/* Blue Dot */}
+          <div style={{
+            position: 'absolute',
+            left: '50%',
+            transform: 'translate(-50%, 0)',
+            width: '16px',
+            height: '16px',
+            backgroundColor: '#00e5ff',
+            borderRadius: '50%',
+            zIndex: 2,
+            boxShadow: '0 0 12px #00e5ff',
+          }}></div>
+
+          {/* Content Box */}
+          <div style={{
+            backgroundColor: 'rgba(255, 255, 255, 0.05)',
+            padding: '20px 24px',
+            borderRadius: '10px',
+            border: '1px solid rgba(0, 229, 255, 0.3)',
+            boxShadow: '0 4px 10px rgba(0,229,255,0.05)',
+            width: '44%',
+            color: '#fff',
+            fontFamily: 'Segoe UI, sans-serif',
+            textAlign: 'left',
+            zIndex: 2,
+          }}>
+            <h3 style={{
+              fontSize: '20px',
+              color: '#00e5ff',
+              marginBottom: '10px',
+              fontWeight: '600',
+            }}>{item.year}</h3>
+            <p style={{ fontSize: '16px', color: '#ccc', lineHeight: '1.6' }}>
+              {item.description}
+            </p>
+          </div>
+        </div>
+      );
+    })}
+  </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
       
      <section id="skills" style={{ marginTop: '100px', padding: '20px' }}>
@@ -805,6 +916,12 @@ const containerStyle3 = {
     </button>
   </form>
 </section>
+
+
+
+
+
+
    {/* Footer Section */}
 <footer
   style={{
@@ -830,11 +947,21 @@ const containerStyle3 = {
     Let’s Connect
   </h2>
 
-  <p style={{ fontSize: '16px', color: '#cccccc', marginBottom: '20px' }}>
-    Open to freelance work, collaborations, or just a friendly chat.
-  </p>
+  <div style={{ maxWidth: '500px', margin: '0 auto' }}>
+    <p style={{ fontSize: '16px', color: '#cccccc', marginBottom: '20px' }}>
+      Open to freelance work, collaborations, or just a friendly chat.
+    </p>
+  </div>
 
-  <div style={{ display: 'flex', justifyContent: 'center', gap: '30px', marginBottom: '25px', flexWrap: 'wrap' }}>
+  <div
+    style={{
+      display: 'flex',
+      justifyContent: 'center',
+      gap: '30px',
+      marginBottom: '25px',
+      flexWrap: 'wrap',
+    }}
+  >
     <a
       href="mailto:saikumarcse193@gmail.com"
       style={{
@@ -880,12 +1007,20 @@ const containerStyle3 = {
     </a>
   </div>
 
-  <hr style={{ border: '0.5px solid rgba(255,255,255,0.1)', margin: '20px 0' }} />
+  <hr
+    style={{
+      border: '0.5px solid rgba(255,255,255,0.1)',
+      margin: '20px auto',
+      maxWidth: '400px',
+    }}
+  />
 
   <p style={{ fontSize: '14px', color: '#888' }}>
-    © {new Date().getFullYear()} <span style={{ color: '#00e5ff' }}>Saikumar Reddy</span>. All rights reserved.
+    © {new Date().getFullYear()}{' '}
+    <span style={{ color: '#00e5ff' }}>Saikumar Reddy</span>. All rights reserved.
   </p>
 </footer>
+
 
 
 
