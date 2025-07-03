@@ -453,12 +453,12 @@ const containerStyle3 = {
 
     {/* Timeline entries */}
     {[
-      { year: "2025", description: "Contributing to open source & building full-stack MERN apps." },
-      { year: "2024", description: "Built ComplaintPortal, TravelXpert. Internship at Internship Studio." },
-      { year: "2023", description: "Focused on backend: Node.js, MongoDB, Express." },
-      { year: "2022", description: "Created ExpenseTracker. Learned React & JavaScript." },
-      { year: "2021", description: "Completed Intermediate. Learned Java basics." },
-      { year: "School", description: "Top scores in SSC. Participated in science fairs & Olympiads." },
+      { year: "2025", description: "Recognized among top 1% students for academic and project excellence. Leading open-source contributions and developing production-grade MERN stack applications." },
+      { year: "2024", description: "Built impactful full-stack apps like ComplaintPortal and ExploreXpert. Completed internship with Internship Studio, receiving top performance feedback." },
+      { year: "2023", description: "Mastered backend technologies including Node.js, Express, and MongoDB. Integrated backend services into dynamic frontend projects using React." },
+      { year: "2022", description: "Earned top grades in coursework while learning React, JavaScript, and building projects like ExpenseTracker. Developed strong problem-solving skills." },
+      { year: "2021", description: "Graduated Intermediate with distinction. Built a foundation in Java programming and logical thinking. Recognized as a school tech leader." },
+      { year: "School", description: "Topper in SSC with awards in Science Olympiads and school fairs. Developed early interest in coding and innovation." },
     ].map((item, index) => {
       const isLeft = index % 2 === 0;
       return (
@@ -511,6 +511,7 @@ const containerStyle3 = {
     })}
   </div>
 </section>
+
 
 
 
