@@ -3,6 +3,7 @@ import './App.css';
 import complaintPortal from './assets/complaintPortal.png';
 import expenseTracker from './assets/expenseTracker.jpg';
 import profileImg from './assets/profile.jpg';
+import resumePDF from './assets/saikumarresume.pdf';
 import TravelXpert from './assets/travel.png';
 
 function Home() {
@@ -375,7 +376,7 @@ const containerStyle3 = {
     </nav>
   </header>
 
-      <main style={mainStyle}>
+     <main style={mainStyle}>
   <img
     src={profileImg}
     alt="Profile"
@@ -388,18 +389,44 @@ const containerStyle3 = {
       Hello, I'm <br /><span>Saikumar Reddy</span>
     </h1>
     <p style={paragraphStyle}>
-     a passionate MERN stack developer committed to building scalable, intuitive, and user-focused web applications. I specialize in writing clean, 
-     maintainable code and crafting seamless user interfaces that solve real-world challenges through technology.
+      A passionate MERN stack developer committed to building scalable, intuitive, and user-focused web applications. I specialize in writing clean, 
+      maintainable code and crafting seamless user interfaces that solve real-world challenges through technology.
     </p>
-    <a href="#about" style={{ textDecoration: 'none' }}>
-      <button
-        style={buttonStyle}
-        onMouseOver={(e) => (e.currentTarget.style.transform = 'translateY(-3px)')}
-        onMouseOut={(e) => (e.currentTarget.style.transform = 'translateY(0)')}
-      >
-        Explore Now
-      </button>
-    </a>
+
+    {/* Button Row */}
+    <div style={{ display: 'flex', gap: '16px', marginTop: '16px' }}>
+  <a href="#about" style={{ textDecoration: 'none' }}>
+    <button
+      style={buttonStyle}
+      onMouseOver={(e) => {
+        e.currentTarget.style.transform = 'translateY(-3px)';
+        e.currentTarget.style.backgroundColor = '#0056b3'; // darker blue on hover
+      }}
+      onMouseOut={(e) => {
+        e.currentTarget.style.transform = 'translateY(0)';
+        e.currentTarget.style.backgroundColor = '#007bff';
+      }}
+    >
+      Explore Now
+    </button>
+  </a>
+
+  <a href={resumePDF} download style={{ textDecoration: 'none' }}>
+    <button
+      style={buttonStyle} // same style as above
+      onMouseOver={(e) => {
+        e.currentTarget.style.transform = 'translateY(-3px)';
+        e.currentTarget.style.backgroundColor = '#0056b3'; // darker blue on hover
+      }}
+      onMouseOut={(e) => {
+        e.currentTarget.style.transform = 'translateY(0)';
+        e.currentTarget.style.backgroundColor = '#007bff';
+      }}
+    >
+      Download Resume
+    </button>
+  </a>
+</div>
 
     {/* Social Links */}
     <div style={{ marginTop: '24px', display: 'flex', gap: '20px', alignItems: 'center' }}>
@@ -420,6 +447,12 @@ const containerStyle3 = {
     </div>
   </div>
 </main>
+
+
+
+
+
+
 
 <section id="journey" style={{ marginTop: '100px', padding: '20px' }}>
   <h2 style={{
